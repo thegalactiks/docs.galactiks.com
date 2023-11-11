@@ -28,6 +28,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'contents/article',
+        'contents/listing-page',
         'contents/creative-work',
         'contents/organization',
         'contents/page',
