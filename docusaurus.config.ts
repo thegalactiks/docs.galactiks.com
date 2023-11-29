@@ -1,10 +1,8 @@
-// @ts-check
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'Galactiks',
   tagline: 'Generate feature-rich websites with ease',
   favicon: 'img/favicon.ico',
@@ -27,8 +25,7 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
@@ -42,13 +39,11 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      } satisfies Preset.Options,
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+  themeConfig: {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Galactiks',
@@ -109,10 +104,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Galactiks.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      } satisfies Preset.ThemeConfig,
+    },
 };
 
-module.exports = config;
+export default config;
