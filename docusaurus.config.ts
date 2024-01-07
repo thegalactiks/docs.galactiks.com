@@ -48,12 +48,12 @@ const config: Config = {
   ],
 
   themeConfig: {
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'logo-no-background.png',
       navbar: {
         title: 'Galactiks',
         logo: {
           alt: 'Galactiks',
-          src: 'img/logo.svg',
+          src: 'logo.svg',
         },
         items: [
           {
