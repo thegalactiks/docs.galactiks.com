@@ -17,6 +17,10 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  scripts: [
+    { src: 'https://a.galactiks.com/js/script.js', defer: true, 'data-domain': 'docs.galactiks.com' },
+  ],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
