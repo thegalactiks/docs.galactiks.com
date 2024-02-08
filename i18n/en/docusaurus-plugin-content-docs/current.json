@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Getting Started.link.generated-index.title": {
+    "message": "Getting Started with Galactiks",
+    "description": "The generated-index page title for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Getting Started.link.generated-index.description": {
+    "message": "Learn how to install and generate your first website with galactiks projects",
+    "description": "The generated-index page description for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Contents": {
+    "message": "Contents",
+    "description": "The label for category Contents in sidebar docs"
+  },
+  "sidebar.docs.category.Contents.link.generated-index.title": {
+    "message": "Content Types",
+    "description": "The generated-index page title for category Contents in sidebar docs"
+  },
+  "sidebar.docs.category.Contents.link.generated-index.description": {
+    "message": "Explore available content types",
+    "description": "The generated-index page description for category Contents in sidebar docs"
+  }
+}
