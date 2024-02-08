@@ -36,6 +36,14 @@ const sidebars: SidebarsConfig = {
         'contents/webpage-element',
         'contents/website'
       ]
+    },
+    {
+      type: 'category',
+      label: 'Giteway',
+      collapsed: true,
+      items: [
+        'giteway/introduction'
+      ],
     }
   ],
 };
