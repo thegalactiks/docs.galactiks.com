@@ -13,7 +13,10 @@ const sidebars: SidebarsConfig = {
         slug: '/getting-started/',
       },
       collapsed: false,
-      items: ['getting-started/installation']
+      items: [
+        'getting-started/installation',
+        'getting-started/create-template'
+      ]
     },
     {
       type: 'category',
