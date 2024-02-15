@@ -26,5 +26,13 @@
   "sidebar.docs.category.Contents.link.generated-index.description": {
     "message": "Explore available content types",
     "description": "The generated-index page description for category Contents in sidebar docs"
+  },
+  "sidebar.api.link.Giteway API": {
+    "message": "Giteway API",
+    "description": "The label for link Giteway API in sidebar api, linking to /giteway/reference/api"
+  },
+  "sidebar.docs.category.Giteway": {
+    "message": "Giteway",
+    "description": "The label for category Giteway in sidebar docs"
   }
 }
