@@ -1,6 +1,7 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type * as Redocusaurus from 'redocusaurus';
 
 const config: Config = {
   title: 'Galactiks',
@@ -28,93 +29,106 @@ const config: Config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
+          path: 'docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/thegalactiks/docs.galactiks.com/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/thegalactiks/docs.galactiks.com/tree/main/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
       } satisfies Preset.Options,
     ],
+
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'giteway-openapi',
+            spec: 'https://raw.githubusercontent.com/thegalactiks/giteway/main/docs/openapi.yaml',
+            route: '/giteway/reference/api/',
+          }
+        ]
+      } satisfies Redocusaurus.PresetOptions
+    ]
   ],
 
   themeConfig: {
-      image: 'logo-no-background.png',
-      navbar: {
-        title: 'Galactiks',
-        logo: {
-          alt: 'Galactiks',
-          src: 'logo.svg',
+    image: 'logo-no-background.png',
+    navbar: {
+      title: 'Galactiks',
+      logo: {
+        alt: 'Galactiks',
+        src: 'logo.svg',
+      },
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'docs',
+          position: 'left',
+          label: 'Docs',
         },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs',
-            position: 'left',
-            label: 'Docs',
-          },
-          {
-            href: 'https://github.com/thegalactiks',
-            label: 'GitHub',
-            position: 'right',
-          },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Introduction',
-                to: '/docs/',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/thegalactiks',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/thegalactiks',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Galactiks.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      } satisfies Preset.ThemeConfig,
+        {
+          href: '/api',
+          sidebarId: 'api',
+          position: 'left',
+          label: 'API',
+        },
+        {
+          href: 'https://github.com/thegalactiks',
+          label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+      ],
     },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: '/getting-started',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/thegalactiks',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/thegalactiks',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Galactiks.`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    } satisfies Preset.ThemeConfig,
+  },
 };
 
 export default config;

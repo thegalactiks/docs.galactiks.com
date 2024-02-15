@@ -1,6 +1,15 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
+  api: [
+    'api/index',
+    {
+      type: 'link',
+      label: 'Giteway API',
+      href: '/giteway/reference/api'
+    }
+  ],
+
   docs: [
     'introduction',
     {
