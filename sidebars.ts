@@ -54,7 +54,7 @@ const sidebars: SidebarsConfig = {
       label: 'Giteway',
       collapsed: true,
       items: [
-        'giteway/introduction'
+        'giteway/index'
       ],
     }
   ],
